@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import { Counter } from './components/counter/Counter';
 import './App.css';
+import {IBigInterface, ISubInterface} from "../../interfaces/example";
 
 function App() {
+  const usefulSubConstant: ISubInterface = {
+    subProperty1: 1,
+    subProperty2: "A test string",
+    subProperty3: "this can be any type of variable"
+  };
+  const usefulConstant: IBigInterface = {
+    property1: usefulSubConstant,
+    property2: []
+  };
+
+  useEffect(() => {
+    console.log(usefulConstant?.property1?.subProperty2);
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
