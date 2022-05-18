@@ -47,11 +47,19 @@ contract Checker is Ownable {
 
     function mintRemixedNft(address _originalContract, uint _idInContract, address _minter) public payable returns (uint newTokenId){
         require(msg.value >= remixCost(), "need to pay up");
-        address ownerOfNft = IERC721(_originalContract).ownerOf(_idInContract);
+        address ownerOfNft = IERC721(_originalContract).ownerOf(_idInContract); 
         require(ownerOfNft == _minter, "cannot remix an nft that is not _minter's");
         uint newId = _counter++;
         idToContractData[newId] = ownedIds(_originalContract, _idInContract, true);
         return newId;
     }
-   
+
+    function currentBalance() public view onlyOwner returns (uint256){
+        return address(this).balance;
+    }
+    function withdraw() public payable onlyOwner {
+        (bool os, ) = payable(owner()).call{value: address(this).balance}("");
+        require(os, "withdraw failed");
+    }
+
 }
