@@ -20,7 +20,7 @@ contract Checker is Ownable {
 
     mapping(uint => ownedIds) private idToContractData;
     string private baseURI;
-
+    event RemixedNft(uint _id);
     constructor() Ownable() {
         _counter = 1;
         costInWei = 1 ether;
@@ -52,6 +52,7 @@ contract Checker is Ownable {
         require(ownerOfNft == _minter, "cannot remix an nft that is not _minter's");
         uint newId = _counter++;
         idToContractData[newId] = ownedIds(_originalContract, _idInContract, true);
+        emit RemixedNft(newId);
         return newId;
     }
 

@@ -5,7 +5,8 @@
 const { expect, assert } = require("chai")
 const { ethers } = require("hardhat")
 
-let deployedContract
+let remixer
+let collection
 let owner
 let addr1
 let addr2
@@ -13,26 +14,25 @@ let addrs
 
 beforeEach(async function () {
     //asta se executa inainte de fiecare "describe"
-    const ctrFactory = await ethers.getContractFactory("nume_TODO");
+    const remixerFactory = await ethers.getContractFactory("Checker");
+    const mockCollFactory = await ethers.getContractFactory("MockCollection");
     [owner, addr1, addr2, ...addrs] = await ethers.getSigners();//fake wallets
-    deployedContract = await ctrFactory.deploy(
-        //aici vin argumentele pt constructorul contractului
-    )
-    await deployedContract.deployed()
+    remixer = await remixerFactory.deploy()
+    collection = await mockCollFactory.deploy()
+    await remixer.deployed()
+    await collection.deployed()
+    await collection.setAddr1(addr1);
+    await collection.setAddr1(addr2);
 });
 
 
 
 describe(`deployment`, () => {
     it("Should set the right owner", async function () {
-        expect(await deployedContract.owner()).to.equal(owner.address);
+        expect(await remixer.owner()).to.equal(owner.address);
     })
-    it("should check something else", async function () {
-        //something else
-    })
-})
-describe(`transactions`, () => {
-    it("should check something else", async function () {
-        //something else
+    it("return a number", async function () {
+        let returnedToken = await remixer.connect(addr1).mintRemixedNft(collection.address, 1, addr1.address)
+        console.log(`returned number: ${returnedToken}`);
     })
 })
