@@ -1,0 +1,20 @@
+//https://etherscan.io/searchHandler?t=t&term=bored
+//tab urile separa fields
+[
+  "Tokens (ERC 721)\t\t\t\t\t",
+  "Bored Bunny (BUNNY)\t0x9372b371196751dd2f603729ae8d8014bbeb07f6\t0x9372b3711967...~https://www.boredbunny.io/~2~$0.00\t2\t1\tboredbunny_32.png",
+  "Bored Mummy Waking Up (BMWU)\t0xf621b26ce64ed28f42231bcb578a8089f7958372\t0xf621b26ce64e...~https://www.boredmummywakingup.com/~2~$0.00\t2\t1\tboredmummywakingup_32.png",
+  "BoredApeKennelClub (BAKC)\t0xba30e5f9bb24caa003e9f2f0497ad287fdf95623\t0xba30e5f9bb24...~https://boredapeyachtclub.com/#/kennel-club~2~$0.00\t2\t1\tboredapeyc_32.png",
+  "Bored Mummy Baby Waking Up (B...\t0xec3db0b6a6f3085c3b2ebd105aebabd34bce7780\t0xec3db0b6a6f3...~https://www.boredmummywakingup.com/~2~$0.00\t2\t1\tboredmummybabywakingup_32.png",
+  "Name (NAME)\t0xb9310aF43F4763003F42661f6FC098428469aDAB\t0xb9310aF43F47...~https://twitter.com/boredGenius/status/1433587853833826304~2~$0.00\t2\t1\t",
+  "BoredApeYachtClub (BAYC)\t0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d\t0xbc4ca0eda764...~https://boredapeyachtclub.com/~2~$0.00\t2\t1\tboredapeyc_32.png",
+  "Bored Ape Comic (BAC)\t0x1Eb7382976077f92cf25c27CC3b900a274FD0012\t0x1Eb738297607...~https://boredapecomic.com/~2~$0.00\t2\t1\tboredapecomic_32.png",
+  "NFTBOY: Bored Ape Racers (BAR)\t0xd633587a06e396d8bab8083bb70e0bda31911408\t0xd633587a06e3...~https://playnftboy.com/~2~$0.00\t2\t0\tnftboyplay_32.png",
+  "Bored Bananas (BANANA)\t0xe19b9d6538c1ab71434098d9806a7cec5b186ba0\t0xe19b9d6538c1...~https://www.bored-bananas.com/~2~$0.00\t2\t0\tboredbananas_32.png",
+  "Basic Bored Ape Club (BBAC)\t0xd16bdccae06dfd701a59103446a17e22e9ca0ef0\t0xd16bdccae06d...~https://basicboredapeclub.com/~2~$0.00\t2\t0\tbasicboredapeclub_32.png",
+  "Bored Ape Dojo Club (BADC)\t0xa28da5d9e9c4ec74f9d45f3a27c4ca4b88b377cd\t0xa28da5d9e9c4...~https://boredapedojoclub.com/~2~$0.00\t2\t0\tboredapedodjoclub_32.png",
+  "BORED CLIFFS (BCC)\t0xe1145262e11a951fa705ec6f9237fed981d11b64\t0xe1145262e11a...~https://cliffordinu.io/~2~$0.00\t2\t0\thttps://storage.googleapis.com/nftimagebucket/tokensinfo/3470a8f7b1691ca62578dde88bf6a20f.png",
+  "Bored Weird Vitalik Club (BWV...\t0x318c2cccadd1b0fba584997ce2b4f64556157f0f\t0x318c2cccadd1...~https://weirdvitalik.com/~2~$0.00\t2\t0\tweirdvitalik_32.png",
+  "MutantApeYachtClub (MAYC)\t0x60e4d786628fea6478f785a6d7e704777c86a7c6\t0x60e4d786628f...~https://boredapeyachtclub.com/#/mayc~2~$0.00\t2\t0\tmutantapeyacht_32.png",
+  "The Bored Caveman Club (TBCC)\t0xed68D1344e750f9a407d4094E025b85fd0c4eF50\t0xed68D1344e75...~https://theboredcavemanclub.com/~2~$0.00\t2\t0\ttheboredcavemanclub_32.png"
+]
