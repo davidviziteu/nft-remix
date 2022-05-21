@@ -22,7 +22,8 @@ contract Checker is Ownable {
     string private baseURI;
 
     constructor() Ownable() {
-        _counter = 0;
+        _counter = 1;
+        costInWei = 1 ether;
     }
 
     function setBaseURI(string memory _newBaseURI) public onlyOwner { baseURI = _newBaseURI; }
@@ -60,6 +61,16 @@ contract Checker is Ownable {
     function withdraw() public payable onlyOwner {
         (bool os, ) = payable(owner()).call{value: address(this).balance}("");
         require(os, "withdraw failed");
+    }
+
+    function burn(uint256 _tokenId) public returns (uint256) {
+        require(_exists(_tokenId), "token id not existing");
+        ownedIds memory _reference = idToContractData[_tokenId];
+        address original_token_owner = IERC721(_reference.ctr).ownerOf(_reference.id);
+        require(original_token_owner == msg.sender, "you cannot burn someone else's token");
+        idToContractData[_tokenId].exists = false; //check if needed
+        delete idToContractData[_tokenId];
+        return _tokenId;
     }
 
 }
