@@ -43,6 +43,13 @@ describe(`testing emitting ok`, () => {
       .withArgs(1);
 
     })
+    it("should burn the nft", async function () {
+      await remixer.connect(addr1).burn(1)
+      await expect()
+      .to.emit(remixer, "RemixedNft")
+      .withArgs(1);
+
+    })
 })
 
 describe(`testing emitting failure`, () => {
@@ -56,5 +63,21 @@ describe(`testing emitting failure`, () => {
     .to.emit(remixer, "RemixedNft")
     .withArgs(2);
 
+  })
+  it("should print transation return data", async function () {
+    let retData = await remixer.connect(addr1).mintRemixedNft(collection.address, 1, addr1.address, 
+      {value: ethers.utils.parseEther("20.0")}
+    )
+    console.log(JSON.stringify(retData));
+  })
+})
+
+
+describe(`printint return data`, () => {
+  it("should print transation return data", async function () {
+    let retData = await remixer.connect(addr1).mintRemixedNft(collection.address, 1, addr1.address, 
+      {value: ethers.utils.parseEther("20.0")}
+    )
+    console.log(JSON.stringify(retData));
   })
 })
