@@ -43,10 +43,11 @@ describe(`testing emitting ok`, () => {
       expect(await remixer.connect(addr1).owner()).to.be.equal(owner.address)
     })
     it("should check the mock collection has token 1 owner set correcntly", async function () {
-
-      expect(await collection.connect(addr1).ownerOf(1))
-      .to.be.equal(addr1.address)
+      expect(await collection.connect(addr1).ownerOf(1)).to.be.equal(addr1.address)
     })
+    // it("should (fail and ) check the remixer has token 1 owner set correcntly", async function () {
+    //   expect(await remixer.connect(addr1).ownerOf(1)).to.be.revertedWith("token id not existing")
+    // })
     it("should check that nft 1 was remixed correctly", async function () {
       expect(await remixer.connect(addr1).mintRemixedNft(collection.address, 1, nftHashesArr[1], 
         {value: ethers.utils.parseEther("20.0")}
