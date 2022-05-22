@@ -92,4 +92,8 @@ contract Checker is Ownable {
         return idToContractData[_tokenId].hashOfImage;
     }
 
+    function totalRemixedNfts() public view retuns(uint){
+        return _counter;
+    }
+
 }
