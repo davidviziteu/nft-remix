@@ -11,7 +11,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract Checker is Ownable {
     using Strings for uint256;
     uint _counter;
-    uint private costInWei;
+    uint private remixCostInWei;
+    uint private burnCostInWei;
     struct ownedIds{
         address ctr;
         uint id;
@@ -23,13 +24,15 @@ contract Checker is Ownable {
     event RemixedNft(uint _id);
     constructor() Ownable() {
         _counter = 1;
-        costInWei = 1 ether;
+        remixCostInWei = 1 ether;
     }
 
     function setBaseURI(string memory _newBaseURI) public onlyOwner { baseURI = _newBaseURI; }
     function _baseURI() public view returns(string memory){return baseURI;}
-    function remixCost() public view returns (uint256) {return costInWei;}
-    function setRemixCostWei(uint _newTaxInWei) public onlyOwner {costInWei = _newTaxInWei;}
+    function remixCost() public view returns (uint256) {return remixCostInWei;}
+    function burnCost() public view returns (uint256) {return burnCostInWei;}
+    function setRemixCostWei(uint _newTaxInWei) public onlyOwner {remixCostInWei = _newTaxInWei;}
+    function setBurnCostWei(uint _newTaxInWei) public onlyOwner {burnCostInWei = _newTaxInWei;}
     function _exists(uint _id) internal view returns (bool){
         return idToContractData[_id].exists == true;
     }
