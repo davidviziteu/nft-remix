@@ -3,11 +3,11 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract MockCollection{
-    address addr1;
-    address addr2;
+    address private addr1;
+    address private addr2;
     constructor(){
-        addr1 = address(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4);
-        addr2 = address(0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+        addr1 = address(0x70997970C51812dc3A010C7d01b50e0d17dc79C8);
+        addr2 = address(0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC);
     }
     function setAddr1(address _addr1) public {
         addr1 = _addr1;

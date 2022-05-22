@@ -26,7 +26,7 @@ contract Checker is Ownable {
     event RemixedNft(uint id, uint hash);
     event BurnedNft(uint id);
     constructor() Ownable() {
-        _counter = 1;
+        _counter = 0;
         remixCostInWei = 1 ether;
     }
 
@@ -56,7 +56,7 @@ contract Checker is Ownable {
         require(msg.value >= remixCost(), "need to pay up");
         address ownerOfNft = IERC721(_originalContract).ownerOf(_idInContract); 
         require(ownerOfNft == msg.sender, "cannot remix an nft that is not yours");
-        uint newId = _counter++;
+        uint newId = ++_counter;
         balances[msg.sender]++;
         idToContractData[newId] = ownedIds(_originalContract, _idInContract, _hashOfImg, true);
         emit RemixedNft(newId, _hashOfImg);
@@ -92,7 +92,7 @@ contract Checker is Ownable {
         return idToContractData[_tokenId].hashOfImage;
     }
 
-    function totalRemixedNfts() public view retuns(uint){
+    function totalRemixedNfts() public view returns(uint){
         return _counter;
     }
 
