@@ -84,7 +84,7 @@ contract Checker is Ownable {
     }
 
     function balanceOf(address _addr) public view returns(uint){
-        return balanceOf(_addr);
+        return balances[_addr];
     }
 
     function hashOfToken(uint _tokenId) public view returns(uint) {
