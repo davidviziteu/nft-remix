@@ -27,7 +27,8 @@ describe(`testing emitting ok`, () => {
     // it("Should set the right owner", async function () {
     //     expect(await remixer.owner()).to.equal(owner.address);
     // })
-    it("should check the mock collection has token 1 owner set correcntly", async function () {
+
+    it("should deploy the contract and check it's owner", async function () {
       const remixerFactory = await ethers.getContractFactory("Checker");
       const mockCollFactory = await ethers.getContractFactory("MockCollection");
       [owner, addr1, addr2, ...addrs] = await ethers.getSigners();//fake wallets
@@ -39,6 +40,10 @@ describe(`testing emitting ok`, () => {
       await collection.setAddr2(addr2.address);
       console.log(`addr1: ${addr1.address}`);
       console.log(`addr2: ${addr2.address}`);
+      expect(await remixer.connect(addr1).owner()).to.be.equal(owner.address)
+    })
+    it("should check the mock collection has token 1 owner set correcntly", async function () {
+
       expect(await collection.connect(addr1).ownerOf(1))
       .to.be.equal(addr1.address)
     })
