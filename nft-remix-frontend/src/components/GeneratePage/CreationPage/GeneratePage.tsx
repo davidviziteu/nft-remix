@@ -11,7 +11,7 @@ import {BigNumber, ethers} from "ethers";
 import ERC721Data from '@rsksmart/erc721/ERC721Data.json'
 import NftRemix from "../../../artifacts/contracts/NftRemixCtr.sol/Checker.json";
 import {sha256} from "js-sha256";
-import {nftRemixContract} from "../../../utils/apiRoutes";
+import {nftRemixContract, nftRemixPhotoUpload} from "../../../utils/apiRoutes";
 
 
 /*
@@ -207,7 +207,6 @@ export const GeneratePage: FunctionComponent<IProps> = (props) => {
     const onUploadClick = async () => {
         // @ts-ignore
         const message2 = stageRef.current.toDataURL();
-        // const message2 = "0x0";
         const requestBody = {
             contractAddress: nftInfo.address,
             nftId: nftInfo.id,
@@ -231,8 +230,20 @@ export const GeneratePage: FunctionComponent<IProps> = (props) => {
             gasLimit: 2000000,
         });
         const transactionInfos = await result.wait();
+        console.log(await result.wait());
         requestBody.transactionHash = transactionInfos.transactionHash;
         requestBody.givenId = transactionInfos.events[0].args[0];
+
+        const response = await fetch(`${nftRemixPhotoUpload}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestBody),
+        });
+
+        console.log(response);
+        console.log(await response.json());
     }
 
     const checkDeselect = (e: { target: { getStage: () => any; }; }) => {
