@@ -1,0 +1,36 @@
+@import "src/styles/constants";
+
+.authorSectionWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  height: 50vh;
+  background: linear-gradient($brown-5, $brown-4, $brown-3);
+  box-shadow: $primary-box-shadows;
+
+  & .authorWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 33%;
+
+    & .authorPhoto {
+      width: 50%;
+    }
+
+    & .authorName {
+      font-weight: bold;
+      font-size: $medium-font;
+      text-align: center;
+    }
+    & .authorEmail {
+      font-style: italic;
+      text-align: center;
+      color: black;
+    }
+  }
+}

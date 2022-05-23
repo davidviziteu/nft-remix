@@ -1,0 +1,26 @@
+@import "src/styles/constants";
+
+.topbar {
+  width: 100vw;
+  height: 7vh;
+  position: sticky;
+  top: 0;
+  background: $brown-3;
+  border-bottom: 4px solid $brown-4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 3;
+  box-shadow: $primary-box-shadows;
+
+  & .logo {
+    width: 5vh;
+    height: 5vh;
+    margin-left: 2vw;
+    cursor: pointer;
+  }
+
+  & .stats {
+    margin-left: 2vw;
+  }
+}

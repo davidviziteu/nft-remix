@@ -1,0 +1,21 @@
+
+.resultWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 0.6vw 1.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  cursor: pointer;
+
+  .resultName {
+    font-weight: bold;
+    margin-left: 0.5vw;
+  }
+}
+
+.noNFT {
+  border-color: red;
+  cursor: not-allowed;
+}

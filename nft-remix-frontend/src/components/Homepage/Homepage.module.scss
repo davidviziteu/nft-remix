@@ -1,0 +1,43 @@
+@import "src/styles/constants";
+
+.homepageWrapper {
+  display: flex;
+  padding-top: 7vh;
+  flex-direction: column;
+  justify-content: center;
+  background: $primary-gradient;
+  min-height: 93vh;
+
+  & .wallpaperWrapper {
+    width: 65%;
+    height: auto;
+    margin: 3vh auto 5vh;
+
+    & .heroImage {
+      width: 100%;
+      border-radius: 14px;
+    }
+
+    & .heroDescription {
+      position:absolute;
+      top: 30%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      color: $primary-text-color;
+      font-weight: 700;
+      font-size: $title-font;
+    }
+
+    & .redirectButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & .redirectBtnLabel {
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
+  }
+}
