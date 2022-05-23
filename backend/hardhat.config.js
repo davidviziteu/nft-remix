@@ -24,10 +24,15 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   solidity: "0.8.4",
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    g: {
+      url: "https://goerli.prylabs.net",
+      accounts: [`0xd20efa125a20467fbe80c05860c4065780e137cfb7ae8742e65511f9ab6`],
+      gas: "auto",
+      gasPrice: "auto",
+    },
+    r: {
+      url: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+      accounts: ['0xd20efa125a20467fbe80c05860c4065780e137cfb7ae8742e65511f9ab6207c9'],
     },
   },
   gasReporter: {
