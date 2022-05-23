@@ -1,0 +1,25 @@
+@import "src/styles/constants";
+
+.primary {
+  color: $primary-button-text;
+  background: $primary-button-color;
+
+  &:hover {
+    background: $primary-button-hover;
+  }
+}
+
+.button {
+  position: relative;
+  border : 0;
+  padding: 1vw;
+  cursor: pointer;
+  transition: all 100ms 0ms ease-in;
+
+  --btn-raise: 1rem;
+  clip-path: polygon(var(--btn-raise) 0%,
+          calc(100% - var(--btn-raise)) 0%,
+          100% 50%,
+          calc(100% - var(--btn-raise)) 100%,
+          var(--btn-raise) 100%, 0 50%);
+}

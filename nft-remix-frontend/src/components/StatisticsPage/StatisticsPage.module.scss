@@ -1,0 +1,28 @@
+@import "../../styles/constants";
+
+.wrapper {
+  min-height: 93vh;
+  width: 100vw;
+  background: $primary-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.stats {
+  height: 70vh;
+  overflow: scroll;
+  background: $brown-6;
+  width:70vw;
+  margin-top: 10vh;
+  border-radius: 24px;
+  padding-top: 1vw;
+}
+
+.preStyle {
+  display: block;
+  padding: 10px 30px;
+  margin: 0;
+
+  color: $special-text-color;
+}

@@ -1,0 +1,35 @@
+@import "src/styles/constants";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & .imageWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 50% 0;
+    width: 50%;
+    align-items: center;
+
+    & .deleteButtonWrapper {
+      width: 100%;
+      height: 1vw;
+    }
+
+    & .deleteButton {
+      position: absolute;
+      padding: 0.5vw 1vw;
+    }
+
+    & .image {
+      border: 1px solid $secondary-color;
+      border-radius: 14px;
+      width: 90%;
+      height: 10vh;
+    }
+  }
+}
+

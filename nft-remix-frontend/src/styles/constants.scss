@@ -1,0 +1,52 @@
+// background colors
+$primary-color: #bcaaa4;
+$secondary-color: #bdbdbd;
+
+
+// greys
+$grey-1: #424242;
+$grey-2: #212121;
+$grey-3: #616161;
+$grey-4: #757575;
+
+
+// browns
+$brown-1: #bcaaa4;
+$brown-2: #a1887f;
+$brown-3: #8d6e63;
+$brown-4: #795548;
+$brown-5: #6d4c41;
+$brown-6: #5d4037;
+$brown-7: #5d4037;
+
+
+// reds
+$red-1: #f44336;
+
+
+// text colors
+$primary-text-color: #fff;
+$secondary-text-color: $brown-1;
+$special-text-color: #ffca28;
+$error-text-color: $red-1;
+
+
+// text-fonts
+$small-font: 20px;
+$medium-font: 24px;
+$title-font: 34px;
+
+
+// button constants
+$primary-button-text: $primary-text-color;
+$primary-button-color: $brown-2;
+$primary-button-hover: $brown-6;
+
+
+// box shadows
+$primary-box-shadows: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+$secondary-box-shadows: 0px 3px 15px rgba(0,0,0,0.2);
+
+
+// gradients
+$primary-gradient: linear-gradient(to left, $primary-color, $brown-1, $primary-color);

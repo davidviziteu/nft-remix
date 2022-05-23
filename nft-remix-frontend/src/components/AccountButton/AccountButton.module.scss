@@ -1,0 +1,30 @@
+@import "src/styles/constants";
+
+.wrapper {
+  margin-left: auto;
+  margin-right: 2vw;
+
+  & .loggedButtonWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & .welcomeMessage {
+      margin-right: 2vw;
+
+      & .username {
+        color: $special-text-color;
+      }
+    }
+
+    & .accountLogo {
+      width: 2.5vh;
+      height: 2vh;
+    }
+
+    & .logoutBtn {
+      margin-left: 1vw;
+    }
+  }
+
+}

@@ -1,0 +1,47 @@
+@import "src/styles/constants";
+
+.primary {
+  color: $primary-button-text;
+  background: $primary-button-color;
+
+  &:hover {
+    background: $primary-button-hover;
+  }
+}
+
+.button {
+  position: relative;
+  border : 0;
+  padding: 1vw;
+  cursor: pointer;
+
+  --btn-raise: 1rem;
+  clip-path: polygon(var(--btn-raise) 0%,
+          calc(100% - var(--btn-raise)) 0%,
+          100% 50%,
+          calc(100% - var(--btn-raise)) 100%,
+          var(--btn-raise) 100%, 0 50%);
+}
+
+/* Button Border Style */
+
+.button.border:before,
+.button.border:after {
+  border: 4px solid #e04e5e;
+}
+.button.border:before {
+  border-bottom: none; /* to prevent the border-line showing up in the middle of the shape */
+}
+.button.border:after {
+  border-top: none; /* to prevent the border-line showing up in the middle of the shape */
+}
+
+/* Button hover styles */
+
+.button.border:hover:before,
+.button.border:hover:after {
+  background: #e04e5e;
+}
+.button.border:hover {
+  color: #fff;
+}
