@@ -149,9 +149,9 @@ export const GeneratePage: FunctionComponent<IProps> = (props) => {
                 stagedImages.concat([
                     {
                         // @ts-ignore
-                        x: stageRef.current.position().x,
+                        x: stageRef.current.position().x || 1000,
                         // @ts-ignore
-                        y: stageRef.current.position().y,
+                        y: stageRef.current.position().y || 1000,
                         width: window.innerWidth * 60 / 100,
                         scale: 1,
                         isNFT: true,
@@ -225,7 +225,7 @@ export const GeneratePage: FunctionComponent<IProps> = (props) => {
         const contract = new ethers.Contract(nftRemixContract, NftRemix.abi, signer);
 
 
-        const result = await contract.mintRemixedNft(nftInfo.address, nftInfo.id, BigNumber.from(0), {
+        const result = await contract.mintRemixedNft(nftInfo.address, nftInfo.id, BigNumber.from("0x" + requestBody.imageHash), {
             value: ethers.utils.parseEther("0.001"),
             gasLimit: 2000000,
         });
@@ -241,7 +241,7 @@ export const GeneratePage: FunctionComponent<IProps> = (props) => {
             },
             body: JSON.stringify(requestBody),
         });
-
+        alert("Your nft was uploaded");
         console.log(response);
         console.log(await response.json());
     }
